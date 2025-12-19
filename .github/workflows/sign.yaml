@@ -1,5 +1,5 @@
 ---
-name: Build container image
+name: Sign container image
 on:
   workflow_dispatch:
 
