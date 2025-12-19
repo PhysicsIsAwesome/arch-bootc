@@ -5,7 +5,7 @@ RUN grep "= */var" /etc/pacman.conf | sed "/= *\/var/s/.*=// ; s/ //" | xargs -n
     sed -i -e "/= *\/var/ s/^#//" -e "s@= */var@= /usr/lib/sysimage@g" -e "/DownloadUser/d" /etc/pacman.conf
 
 RUN pacman -Syu
-RUN pacman -Sy --noconfirm base dracut linux linux-firmware ostree btrfs-progs e2fsprogs xfsprogs dosfstools skopeo dbus dbus-glib glib2 ostree shadow nano plasma-meta && pacman -S --clean --noconfirm
+RUN pacman -Sy --noconfirm base dracut linux linux-firmware ostree btrfs-progs e2fsprogs xfsprogs dosfstools skopeo dbus dbus-glib glib2 ostree shadow nano sddm plasma-desktop && pacman -S --clean --noconfirm
 
 # https://github.com/bootc-dev/bootc/issues/1801
 RUN --mount=type=tmpfs,dst=/tmp --mount=type=tmpfs,dst=/root \
